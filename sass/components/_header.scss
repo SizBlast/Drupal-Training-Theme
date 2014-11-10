@@ -1,0 +1,97 @@
+// Green banner //
+.l-header-info {
+	background-color: $dropsolid-green;
+	height: 30px;
+}
+
+// Grey banner //
+.l-header-nav {
+	background-color: $dropsolid-grey;
+	border-bottom: solid 5px $dropsolid-orange;
+	@include breakpoint($tab, true)
+	{
+		max-heigt: 80px;
+	}
+}
+
+.logo {
+	@include breakpoint($tab, true)
+	{
+		margin: 0;
+		padding: 0;
+		height: 80px;
+		float: left;
+		img {
+			height: 50px;
+			margin: 15px 0px;
+		}
+		&:hover {
+			background-image: url("../images/hover-triangle.png");
+			background-repeat: no-repeat;
+			background-position: center top;
+		}
+	}
+}
+
+.l-region--navigation {
+	@include breakpoint($tab, true)
+	{
+		float: right;
+
+		// Remove title //
+		.block__title {
+			display: none;
+		}
+
+		// First menu //
+		.menu {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			.leaf, .expanded, .collapsed {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				float: left;
+				//display: inline-block;
+				a {
+					margin: 0;
+					display: block;
+					padding: 0 15px;
+					height: 80px;
+
+					font-family: $font-opensans;
+					color: $white;
+					vertical-align: middle;
+					text-align: center;
+					line-height: 80px;
+					font-size: 20px;
+					font-variant: small-caps;
+
+					&:hover {
+						background-image: url("../images/hover-triangle.png");
+						background-repeat: no-repeat;
+						background-position: center top;
+					}
+				}
+				.active {
+					background-color: $dropsolid-orange;
+				}
+
+
+				// Seconde menu //
+				.menu {
+					display: none;
+					.leaf, .expanded, .collapsed {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Sub-header //
+.l-page-header {
+	background-color: #ececec;
+}

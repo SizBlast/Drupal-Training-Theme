@@ -94,18 +94,6 @@
 		    	<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
 		  	<?php endif; ?>
 
-		  	<?php if ($site_name || $site_slogan): ?>
-		    	<?php if ($site_name): ?>
-		      		<h1 class="site-name">
-		        		<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-		      		</h1>
-		    	<?php endif; ?>
-
-		    	<?php if ($site_slogan): ?>
-		      		<h2 class="site-slogan"><?php print $site_slogan; ?></h2>
-		    	<?php endif; ?>
-		  	<?php endif; ?>
-
 		  	<?php print render($page['navigation']); ?>
 		</div>
 	</div>
@@ -163,11 +151,11 @@
 	<?php endif; ?>
 	<div class="l-footer-main">
 		<div class="l-page">
-			<div class="l_footer_main_one">
-				<?php print render($page['l_footer_main_one']); ?>
-			</div>
 			<div class="l_footer_main_two">
 				<?php print render($page['l_footer_main_two']); ?>
+			</div>
+			<div class="l_footer_main_one">
+				<?php print render($page['l_footer_main_one']); ?>
 			</div>
 		</div>
 	</div>
