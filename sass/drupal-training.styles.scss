@@ -1,0 +1,105 @@
+// Import external libraries.
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "toolkit";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+
+.l-page {
+	@include clearfix;
+	margin: 0 auto;
+	@include breakpoint($tab, true)
+	{
+		width: $tab;
+	}
+	@include breakpoint($desk, true)
+	{
+		width: $desk;
+	}
+}
+
+.l-header-info-one {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 1);
+	}
+}
+
+.l-header-info-two {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 4);
+	}
+}
+
+.l-header-info-three {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 7);
+	}
+}
+
+.l-header-info-four {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 10);
+	}
+}
+
+.l_footer_info_one {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 1);
+	}
+}
+
+.l_footer_info_two {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 4);
+	}
+}
+
+.l_footer_info_three {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 7);
+	}
+}
+
+.l_footer_info_four {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(3, 10);
+	}
+}
+
+.l_footer_main_one {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(6, 1);
+	}
+}
+
+.l_footer_main_two {
+	@include breakpoint($tab, true)
+	{
+		@include grid-span(6, 7);
+	}
+}

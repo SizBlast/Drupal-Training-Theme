@@ -1,0 +1,38 @@
+name = Drupal Training
+description = Please provide a description for your theme.
+base theme = omega
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; ========================================
+; Stylesheets
+; ========================================
+stylesheets[all][] = css/drupal-training.normalize.css
+stylesheets[all][] = css/drupal-training.hacks.css
+stylesheets[all][] = css/drupal-training.styles.css
+stylesheets[all][] = css/drupal-training.no-query.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/drupal-training.behaviors.js
+
+; ========================================
+; Regions
+; ========================================
+regions[l_header_info_one] = Header Info One
+regions[l_header_info_two] = Header Info Two
+regions[l_header_info_three] = Header Info Three
+regions[l_header_info_four] = Header Info Four
+regions[navigation] = Navigation
+regions[l_page_header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[l_footer_info_one] = Footer Info One
+regions[l_footer_info_two] = Footer Info Two
+regions[l_footer_info_three] = Footer Info Three
+regions[l_footer_info_four] = Footer Info Four
+regions[l_footer_main_one] = Footer Main One
+regions[l_footer_main_two] = Footer Main Two

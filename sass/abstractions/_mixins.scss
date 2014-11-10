@@ -1,0 +1,163 @@
+// ******************************* //
+// MIXINS BY CHRISTOF VAN CAUTEREN //
+// ******************************* //
+
+// Transitions //
+
+@mixin transition($args...) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}transition: $args;
+	}
+}
+
+// Border-radius //
+
+@mixin addBackgroundClip {
+	/* Prevent background color leak outs */
+	-webkit-background-clip: padding-box; 
+	-moz-background-clip:    padding; 
+	background-clip:         padding-box;
+}
+
+@mixin border-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-radius: $value;
+	}
+
+	@include addBackgroundClip;
+}
+
+@mixin border-top-left-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-left-radius: $value;
+	}
+}
+
+@mixin border-top-right-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-right-radius: $value;
+	}
+}
+
+@mixin border-bottom-right-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-right-radius: $value;
+	}
+}
+
+@mixin border-bottom-left-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-left-radius: $value;
+	}
+}
+
+@mixin border-top-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-left-radius: $value;
+	}
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-right-radius: $value;
+	}
+}
+
+@mixin border-bottom-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-left-radius: $value;
+	}
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-right-radius: $value;
+	}
+}
+
+@mixin border-right-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-right-radius: $value;
+	}
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-right-radius: $value;
+	}
+}
+
+@mixin border-left-radius($value) {
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-top-left-radius: $value;
+	}
+	@each $prefix in -webkit-, -moz-, '' {
+		#{$prefix}border-bottom-left-radius: $value;
+	}
+}
+
+// Animations & key-frames //
+/* use:
+	@include keyframes(slide-down) {
+	  0% { opacity: 1; }
+	  90% { opacity: 0; }
+	}
+
+	.element {
+	  width: 100px;
+	  height: 100px;
+	  background: black;
+	  @include animation('slide-down 5s 3');
+	}
+*/
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+// Opacity //
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Hover //
+
+/* Lightens background color on hover */
+@mixin hoverLight ($color) {
+    background: $color;
+    &:hover {
+        background: $color + 30;
+    }
+}
+
+/* Darkens background color on hover */
+@mixin hoverDark ($color) {
+    background: $color;
+    &:hover {
+        background: $color - 30;
+    }
+}
+
+// Circle //
+
+@mixin circle($size) {
+     width: $size;
+     height: $size;
+     border-radius: 100%;
+}
